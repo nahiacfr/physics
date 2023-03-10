@@ -7,6 +7,7 @@ public class Mover : MonoBehaviour
 {
     private Rigidbody riggidBody;
     private bool canJump;
+    private bool moveForward;
     [SerializeField]
     public int jumpForce = 200;
     [SerializeField]
@@ -36,7 +37,16 @@ public class Mover : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        canJump = true;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
+        {
+            canJump = true;
+        }
+        
+    }
+    void OnTriggerExit(Collider other)
+    {
+
+        //other.gameObject.
     }
     void OnCollisionExit(Collision collision)
     {
