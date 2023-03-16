@@ -31,7 +31,7 @@ public class Mover : MonoBehaviour
     {
         if (canJump && Input.GetKeyDown(KeyCode.Space))
         {
-            riggidBody.AddForce(new Vector3(0, jumpForce, 0));
+            riggidBody.AddForce(Vector3.back);
         }
     }
 
